@@ -1,0 +1,38 @@
+#include <stdio.h>
+int binary_search(int arr[],int LB,int UB,int item){
+  int L=LB;
+    int H=UB;
+    int mid=(L+H)/2;
+    while((arr[mid]!=item)&&(L<=H)){
+        if(item<arr[mid]) H=mid-1;
+        else
+        L=mid+1;
+        mid=(H+L)/2;
+    }
+    if(arr[mid]==item) return mid;
+    else 
+    return LB-1;
+    
+    
+    
+}
+ int main() {
+    int item;
+    
+    int arr[]={1,2,3,4,5,7,9,10,19,30};
+    int LB=0,UB=9;
+    
+    
+    printf("enter the item you want to search in array\n");
+    scanf("%d",&item);
+    int c=binary_search( arr,LB,UB,item);
+    if(c>=LB)
+        printf("the element is present at index %d",c);
+    else
+    printf("item is not present");
+    
+    
+    
+    
+    
+     return 0; }
