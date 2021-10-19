@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+void enqueue(struct node*f,struct node*r,int item){
+    if (f==r==NULL){
+   struct node*f=(struct node*)malloc(sizeof(struct node));
+   f->data=item;
+       f->link=NULL;
+      r=f;
+        }
+    else
+    r->link=(struct node*)malloc(sizeof(struct node));
+    r=r->link;
+    r->data=item;
+    r->link=NULL;
+    
+}
+struct node{
+    int data;
+    struct node*link;
+    
+};
+ int main() {
+    struct node*p=(struct node*)malloc(sizeof(struct node));
+    p->data=5;
+    p->link=(struct node*)malloc(sizeof(struct node));
+    p->link->data=9;
+    p->link->link=NULL;
+    struct node*f=p;
+    struct node*r=p->link;
+    enqueue(f,r,6);
+    
+    
+     return 0; }
